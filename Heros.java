@@ -2,11 +2,26 @@ public class Heros{
 	private String chNom;
 	private String chClasse; 
 	private String chGenre;
+	private int chPoint_de_vie=100;
+	private int chAttaque=10;
+	private int chDefense=10;
+	private int chDommages=10;
 	
-	public Heros(String parNom, String parClasse,String parGenre){
+	
+	public Heros(String parNom, String parClasse, String parGenre){
 		chNom=parNom;
 		chClasse=parClasse;
 		chGenre=parGenre;
+	}
+
+	public Heros(String parNom, String parClasse, String parGenre, int parPoint_de_vie, int parAttaque, int parDefense, int parDommages){
+		chNom=parNom;
+		chClasse=parClasse;
+		chGenre=parGenre;
+		chPoint_de_vie=parPoint_de_vie;
+		chAttaque=parAttaque;
+		chDefense=parDefense;
+		chDommages=parDommages;
 	}
 	
 	public String toString(){
