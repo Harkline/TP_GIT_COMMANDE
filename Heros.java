@@ -24,6 +24,12 @@ public class Heros{
 		chDommages=parDommages;
 	}
 	
+	public boolean estVivant(){
+		if (chPoint_de_vie>0)
+			return true;
+		return false;
+	}
+	
 	public String toString(){
 		if (chGenre=="m") 
 			return chNom +" le "+ chClasse;
