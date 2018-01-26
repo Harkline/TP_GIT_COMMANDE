@@ -42,5 +42,11 @@ public class Heros{
 		Heros zoe = new Heros("Zoe","barbare","f"); //En une seule ligne !
 		System.out.println(bob.toString());
 		System.out.println(zoe.toString());
-	} 
+		bob.Soigner();
+	}
+	
+	public void Soigner(){
+		this.chPoint_de_vie=100;
+		//System.out.println("J'ai soigne !");
+	}	 
 }
