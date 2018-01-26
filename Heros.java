@@ -1,3 +1,5 @@
+import java.lang.*;
+
 public class Heros{
 	private String chNom;
 	private String chClasse; 
@@ -42,11 +44,27 @@ public class Heros{
 		Heros zoe = new Heros("Zoe","barbare","f"); //En une seule ligne !
 		System.out.println(bob.toString());
 		System.out.println(zoe.toString());
-		bob.Soigner();
+		//System.out.println(zoe.chDommages);
+		bob.Attaquer(zoe);
+		//System.out.println(zoe.chPoint_de_vie);
+		zoe.Soigner();
+		//System.out.println(zoe.chPoint_de_vie);
 	}
 	
 	public void Soigner(){
 		this.chPoint_de_vie=100;
-		//System.out.println("J'ai soigne !");
+		//System.out.println("J'ai soigne le hero!");
 	}	 
+	
+	//math.random() return a pseudorandom double greater than or equal to 0.0 and less than 1.0. 
+	public void Attaquer(Heros defenseur){
+		double proba=Math.random();
+		if (proba>(float)(chAttaque/(float)(chAttaque+defenseur.chDefense))){ 
+			defenseur.chPoint_de_vie = defenseur.chPoint_de_vie - chDommages;
+			System.out.println(this.toString()+" attaque "+defenseur.toString()+" et lui inflige "+defenseur.chDommages+" point(s) de dommage(s)"); //Affichage de l'attaque reussi
+		}
+		else
+			System.out.println(this.toString()+" attaque "+defenseur.toString()+" et rate "); //Affichage de l'attaque rate
+			
+	}
 }
