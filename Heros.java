@@ -1,5 +1,5 @@
 import java.lang.*;
-// commentaires
+// commentaires ceci est un test
 public class Heros{
 	private String chNom;
 	private String chClasse; 
