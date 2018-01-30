@@ -2,7 +2,7 @@
 import java.util.Scanner ;
 
 
-public class Heros
+public class HerosPaul
     {
     private String nom ;
     private String classe ;
@@ -13,20 +13,65 @@ public class Heros
     private int defense = 10 ;
     private int dommages = 10 ;
 
-    public Heros(String parNom, String parClasse, char parGenre)
+    //accesseurs (pour l'instant, seulement les stats)
+    // necessaire pour l'affichage des stats du perso
+    // pour l'edition
+    public int getPointsDeVie() {
+        return this.pointsDeVie ;
+    }
+
+    public int getPointsDeVieMax() {
+        return this.pointsDeVieMax ;
+    }
+
+    public int getAttaque() {
+        return this.attaque ;
+    }
+
+    public int getDefense() {
+        return this.defense ;
+    }
+
+    public int getDommages() {
+        return this.dommages ;
+    }
+
+    //modifieurs
+    // necessaire pour l'edition des stats
+    public void setPointsDeVie(int parPointsDeVie) {
+        this.pointsDeVie = parPointsDeVie ;
+    }
+
+    public void setPointsDeVieMax(int parPointsDeVieMax) {
+        this.pointsDeVieMax = parPointsDeVieMax ;
+    }
+
+    public void setAttaque(int parAttaque) {
+        this.attaque = parAttaque ;
+    }
+
+    public void setDefense(int parDefense) {
+        this.defense = parDefense ;
+    }
+
+    public void setDommages(int parDommages) {
+        this.dommages = parDommages ;
+    }
+
+    public HerosPaul(String parNom, String parClasse, char parGenre)
         {
         nom = parNom ;
         classe = parClasse ;
         genre = parGenre ;
         }
 
-    public Heros(int pv, int atk, int def, int domm)
+    public HerosPaul(int pv, int atk, int def, int domm)
         {
         pointsDeVie = pv ;
         attaque = atk ;
         defense = def ;
         dommages = domm ;
-        }// Heros
+        }// HerosPaul
 
     public String toString()
         {
@@ -47,7 +92,7 @@ public class Heros
         System.out.println(this.toString()+" a regagné tous ses points de vie !");
         }// Soigner
 
-    public void Attaquer(Heros defens)
+    public void Attaquer(HerosPaul defens)
         {
         Scanner sc = new Scanner(System.in);// on entre son choix au clavier
         int choix ;
@@ -89,7 +134,7 @@ public class Heros
             }
         }// Attaquer
 
-    public void AttaqueSpe(Heros defens, float factProba, int factAttaq, String nomAttaq)
+    public void AttaqueSpe(HerosPaul defens, float factProba, int factAttaq, String nomAttaq)
         {
         double proba = Math.random() ;
         float prob=((float)(attaque)/(float)(defens.attaque+defens.defense));
@@ -108,7 +153,7 @@ public class Heros
         return this.attaque + (int)(Math.random()*10) ;
         }// DommagesAleatoire
 
-    public void AffichePV(Heros defens)
+    public void AffichePV(HerosPaul defens)
         {
         int i = 0 ;
         for ( ; i < 55 ; i++)// esthetique
@@ -123,18 +168,22 @@ public class Heros
         System.out.println("\n") ;
         }// Affiche PV
 
-    public void Combat(Heros defens)
+    public void Combat(HerosPaul defens)
         {
         for (int compteur=0;this.pointsDeVie>0 && defens.pointsDeVie>0;compteur++)
             {
             // tant qu'aucun joueur n'est mort :
             if (compteur%2 == 0)
                 {
+                PanelEdition.setChHero(this) ;// a modifier
+                PanelEdition.AfficherStats() ;// a modifier
                 this.AffichePV(defens) ;// on affiche les pv ...
                 this.Attaquer(defens) ;// ... et on attaque
                 }
             else
                 {
+                PanelEdition.setChHero(defens) ;// a modifier
+                PanelEdition.AfficherStats() ;// a modifier
                 defens.AffichePV(this) ;
                 defens.Attaquer(this) ;
                 }
@@ -147,11 +196,11 @@ public class Heros
 
     public static void main(String []args)
         {
-        Heros Bob = new Heros("Bob", "Magicien", 'm') ;
+        HerosPaul Bob = new HerosPaul("Bob", "Magicien", 'm') ;
         System.out.println(Bob);// inutile d'ajouter .toString
         // println prend automatiquement la methode toString
 
-        Heros Zoe = new Heros("Zoe", "Barbare", 'f') ;
+        HerosPaul Zoe = new HerosPaul("Zoe", "Barbare", 'f') ;
         System.out.println(Zoe);
 
         Bob.Combat(Zoe);
