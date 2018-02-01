@@ -23,7 +23,7 @@ public class PanelDuHaut extends JPanel implements ActionListener
 		
 		JPanel affichage = new JPanel(); add(affichage); affichage.setBackground(new Color(95, 158, 160));
 		FondCarac hStats = new FondCarac(chHeros1);
-		hStats.actualiserFonds(this);
+		add(hStats);
 		
 		affichage.add(new JLabel("Affichage:"));
 		
