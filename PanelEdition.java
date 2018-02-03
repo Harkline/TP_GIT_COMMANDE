@@ -12,7 +12,7 @@ public class PanelEdition extends JPanel implements ActionListener {
     JTextField zoneDef ;
     JTextField zoneDom ;
     JButton actualiser = new JButton("Actualiser les statistiques") ;
-    HerosPaul chHero ;
+    Heros chHero ;
 
     public PanelEdition() {
         this.add(zonePV) ;
@@ -24,16 +24,16 @@ public class PanelEdition extends JPanel implements ActionListener {
         actualiser.addActionListener(this) ;
     }
 
-    public void setChHero(HerosPaul hero) {
-        this.chHero = hero ;
+    public void setChHero(Heros parHeros) {
+        this.chHero = parHeros ;
     }
 
     public void AfficherStats() {
-        zonePV.setText(String.valueOf(this.getPointsDeVie())) ;
-        zonePVMax.setText(String.valueOf(this.getPointsDeVieMax())) ;
-        zoneAtk.setText(String.valueOf(this.getAttaque())) ;
-        zoneDef.setText(String.valueOf(this.getDefense())) ;
-        zoneDom.setText(String.valueOf(this.getDommages())) ;
+        zonePV.setText(String.valueOf(this.chHero.getPointsDeVie())) ;
+        zonePVMax.setText(String.valueOf(this.chHero.getPointsDeVieMax())) ;
+        zoneAtk.setText(String.valueOf(this.chHero.getAttaque())) ;
+        zoneDef.setText(String.valueOf(this.chHero.getDefense())) ;
+        zoneDom.setText(String.valueOf(this.chHero.getDommages())) ;
     }
 
 
