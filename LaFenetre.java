@@ -24,7 +24,7 @@ public class LaFenetre extends JFrame
 		setContentPane(contentPane);
 		contentPane.setBackground(new Color(240, 240, 240));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(1000, 600);
+		setSize(1200, 600);
         // P:precedemment:566~,622~
         setVisible(true);
         setLocation(10, 10);
@@ -33,12 +33,11 @@ public class LaFenetre extends JFrame
 
 
     public static void main(String args[]) {
-        /*
-        Heros Bob = new Heros("Bob", "Magicien", 'm') ;
+        Heros Bob = new Heros("Bob", "Magicien", 'm') ;/*
         System.out.println(Bob);// inutile d'ajouter .toString
         // println prend automatiquement la methode toString
-
-        Heros Zoe = new Heros("Zoe", "Barbare", 'f') ;
+        */
+        Heros Zoe = new Heros("Zoe", "Barbare", 'f') ;/*
         System.out.println(Zoe);
         Bob.Combat(Zoe);
         */
@@ -48,7 +47,7 @@ public class LaFenetre extends JFrame
         /*
         Heros.br();
         */
-        LaFenetre fenetreG = new LaFenetre("Menu", michel, aradia);
+        LaFenetre fenetreG = new LaFenetre("Menu", Bob, Zoe);
         /*
         System.out.println(aradia.stringToString(aradia.chClasse));
         Heros.br();

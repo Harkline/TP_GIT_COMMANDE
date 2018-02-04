@@ -17,7 +17,7 @@ public class PanelFils extends JPanel
 		Heros chHeros1 = parHeros1;
 		Heros chHeros2 = parHeros2;
 		
-		this.setLayout(new BorderLayout(20, 20));
+		this.setLayout(new BorderLayout(1, 0));
 		
 		PanelCombat combat = new PanelCombat(chHeros1, chHeros2);
         add(combat, BorderLayout.SOUTH);

@@ -18,7 +18,7 @@ public class PanelCombat extends JPanel implements ActionListener
 		
 		setLayout(new BorderLayout(2, 2));
         //
-		setSize(1000, 500);
+		setSize(500, 500);
 		
 		
 		JLabel titre = new JLabel("Combat:");

@@ -110,12 +110,13 @@ public class Heros
 
     public void Attaquer(Heros defens)
         {
-        Scanner sc = new Scanner(System.in);// on entre son choix au clavier
+        //Scanner sc = new Scanner(System.in);// on entre son choix au clavier
         int choix ;
         if (classe == "Barbare")
             {
-            System.out.println("--> Attaque normale\n--> Frappe éclair\n--> Frappe de l'ours") ;
-            choix = sc.nextInt() ;// on recupere un entier ...
+            //System.out.println("--> Attaque normale\n--> Frappe éclair\n--> Frappe de l'ours") ;
+            //choix = sc.nextInt() ;// on recupere un entier ...
+            choix = (int)(Math.random())%4 ;
             switch (choix)// ... pour choisir l'attaque
                 {
                 case 1:
@@ -132,8 +133,9 @@ public class Heros
         else
             {
             // pour l'instant
-            System.out.println("--> Attaque normale\n--> Boule de feu\n--> Cyclone de Turchin\n--> Soin") ;
-            choix = sc.nextInt() ;
+            //System.out.println("--> Attaque normale\n--> Boule de feu\n--> Cyclone de Turchin\n--> Soin") ;
+            //choix = sc.nextInt() ;
+            choix = (int)(Math.random())%4 ;
             switch (choix)
                 {
                 case 1:
@@ -171,6 +173,7 @@ public class Heros
         return this.attaque + (int)(Math.random()*10) ;
         }// DommagesAleatoire
 
+    // INTERFACE EN LIGNE DE COMMANDE SEULEMENT
     public void AffichePV(Heros defens)
         {
         int i = 0 ;
@@ -195,14 +198,14 @@ public class Heros
                 {
                 chPanel.setChHero(this) ;// a modifier
                 chPanel.AfficherStats() ;// a modifier
-                this.AffichePV(defens) ;// on affiche les pv ...
+                //this.AffichePV(defens) ;// on affiche les pv ...
                 this.Attaquer(defens) ;// ... et on attaque
                 }
             else
                 {
                 chPanel.setChHero(defens) ;// a modifier
                 chPanel.AfficherStats() ;// a modifier
-                defens.AffichePV(this) ;
+                //defens.AffichePV(this) ;
                 defens.Attaquer(this) ;
                 }
             }
