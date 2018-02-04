@@ -16,8 +16,9 @@ public class PanelCombat extends JPanel implements ActionListener
 		chHeros1 = parHeros1;
 		chHeros2 = parHeros2;
 		
-		setLayout(new BorderLayout(5, 5));
-		setSize(400, 400);
+		setLayout(new BorderLayout(2, 2));
+        //
+		setSize(1000, 500);
 		
 		
 		JLabel titre = new JLabel("Combat:");

@@ -17,6 +17,12 @@ public class Heros
     //accesseurs (pour l'instant, seulement les stats)
     // necessaire pour l'affichage des stats du perso
     // pour l'edition
+    public String getNom() {
+        return this.nom ;
+    }
+    public String getClasse() {
+        return this.classe;
+    }
     public int getPointsDeVie() {
         return this.pointsDeVie ;
     }

@@ -1,6 +1,11 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.JPanel ;
+import javax.swing.JLabel ;
+import java.awt.GridLayout ;
+import java.awt.Color ;
+import javax.swing.JButton ;
+import javax.swing.JTextField ;
+import java.awt.event.ActionListener ;
+import java.awt.event.ActionEvent ;
 
 public class PanelDuHaut extends JPanel implements ActionListener
 	{
@@ -17,18 +22,25 @@ public class PanelDuHaut extends JPanel implements ActionListener
 		chHeros2 = parHeros2;
 		
 		GridLayout gl = new GridLayout();
-		gl.setColumns(2); gl.setRows(1); gl.setHgap(9); gl.setVgap(9);
+		gl.setColumns(2);
+        gl.setRows(1);
+        gl.setHgap(9);
+        gl.setVgap(9);
 		setLayout(gl);
 		
 		
-		JPanel affichage = new JPanel(); add(affichage); affichage.setBackground(new Color(95, 158, 160));
+		JPanel affichage = new JPanel();
+        add(affichage);
+        affichage.setBackground(new Color(95, 158, 160));
+		affichage.add(new JLabel("Affichage:"));
+		
 		FondCarac hStats = new FondCarac(chHeros1);
 		hStats.actualiserFonds(this);
 		
-		affichage.add(new JLabel("Affichage:"));
-		
-		JPanel autre = new JPanel(); add(autre); autre.setBackground(new Color(95, 158, 160));
-		autre.add(new JLabel("Autre:"));
+		PanelEdition panelDeGauche = new PanelEdition(chHeros1);
+        add(panelDeGauche);
+        panelDeGauche.setBackground(new Color(95, 158, 160));
+		//panelDeGauche.add(new JLabel("Edition"));
 		
 		
 		setBackground(new Color(0, 120, 120));
