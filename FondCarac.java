@@ -1,5 +1,6 @@
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.BoxLayout ;
+import javax.swing.JPanel ;
+import javax.swing.JLabel ;
 
 public class FondCarac extends JPanel
 	{
@@ -20,12 +21,12 @@ public class FondCarac extends JPanel
 			}
 		
 			{
-			lesFonds[0].add(new JLabel(""+chHeros.chNom));
-			lesFonds[1].add(new JLabel(""+chHeros.chClasse));
-			lesFonds[2].add(new JLabel("Vie: "+chHeros.intToString(chHeros.chVie)));
-			lesFonds[3].add(new JLabel("Atk: "+chHeros.intToString(chHeros.chAtk)));
-			lesFonds[4].add(new JLabel("Def: "+chHeros.intToString(chHeros.chDef)));
-			lesFonds[5].add(new JLabel("Dgts: "+chHeros.intToString(chHeros.chDgts)));
+			lesFonds[0].add(new JLabel(""+chHeros.getNom()));
+			lesFonds[1].add(new JLabel(""+chHeros.getClasse()));
+			lesFonds[2].add(new JLabel("Vie: "+chHeros.getPointsDeVie()+"/"+chHeros.getPointsDeVieMax()));
+			lesFonds[3].add(new JLabel("Atk: "+chHeros.getAttaque()));
+			lesFonds[4].add(new JLabel("Def: "+chHeros.getDefense()));
+			lesFonds[5].add(new JLabel("Dgts: "+chHeros.getDommages()));
 			}
 		}
 	public void actualiserFonds(PanelDuHaut parPanel)
