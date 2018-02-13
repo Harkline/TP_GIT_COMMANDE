@@ -11,13 +11,14 @@ public class PanelCombat extends JPanel implements ActionListener
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public PanelCombat(Heros parHeros1, Heros parHeros2)
+	public PanelCombat(Heros parHeros1)
 		{
 		chHeros1 = parHeros1;
-		chHeros2 = parHeros2;
+//		chHeros2 = parHeros2;
 		
-		setLayout(new BorderLayout(5, 5));
-		setSize(400, 400);
+		setLayout(new BorderLayout(2, 2));
+        //
+		setSize(500, 500);
 		
 		
 		JLabel titre = new JLabel("Combat:");

@@ -1,5 +1,6 @@
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.BoxLayout ;
+import javax.swing.JPanel ;
+import javax.swing.JLabel ;
 
 public class FondCarac extends JPanel
 	{
@@ -13,18 +14,26 @@ public class FondCarac extends JPanel
 		{
 		Heros chHeros;
 		chHeros = parHeros;
+		for(int i=0; i<6; i++)
+			{
+			lesFonds[i] = new JPanel();
+			lesFonds[i].setLayout(new BoxLayout(lesFonds[i], BoxLayout.LINE_AXIS));
+			}
 		
-		GridLayout gl = new GridLayout();
-		gl.setColumns(1); gl.setRows(6); gl.setHgap(9); gl.setVgap(9);
-		setLayout(gl);
-		
-		
-		add(new JLabel("Nom: "+chHeros.chNom));
-		add(new JLabel("Classe: "+chHeros.chClasse));
-		add(new JLabel("Vie: "+chHeros.intToString(chHeros.chVie)));
-		add(new JLabel("Atk: "+chHeros.intToString(chHeros.chAtk)));
-		add(new JLabel("Def: "+chHeros.intToString(chHeros.chDef)));
-		add(new JLabel("Dgts: "+chHeros.intToString(chHeros.chDgts)));
-		
+			{
+			lesFonds[0].add(new JLabel(""+chHeros.getNom()));
+			lesFonds[1].add(new JLabel(""+chHeros.getClasse()));
+			lesFonds[2].add(new JLabel("Vie: "+chHeros.getPointsDeVie()+"/"+chHeros.getPointsDeVieMax()));
+			lesFonds[3].add(new JLabel("Atk: "+chHeros.getAttaque()));
+			lesFonds[4].add(new JLabel("Def: "+chHeros.getDefense()));
+			lesFonds[5].add(new JLabel("Dgts: "+chHeros.getDommages()));
+			}
+		}
+	public void actualiserFonds(PanelDuHaut parPanel)
+		{
+		for(int i=0; i<6; i++)
+			{
+			parPanel.add(lesFonds[i]);
+			}
 		}
 	}
